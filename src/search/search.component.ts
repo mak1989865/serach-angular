@@ -29,6 +29,7 @@ export class SearchComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+    this.filteredData  = this.data
   }
 
 }

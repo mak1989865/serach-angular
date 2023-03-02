@@ -3,7 +3,7 @@ import { Component, OnInit } from '@angular/core';
 @Component({
   selector: 'app-search',
   templateUrl: './search.component.html',
-  styleUrls: ['./search.component.css']
+  styleUrls: ['./search.component.css'],
 })
 export class SearchComponent implements OnInit {
   filteredData = [];
@@ -18,18 +18,19 @@ export class SearchComponent implements OnInit {
     { id: 18, name: 'Dr IQ', country: 'Hong Kong' },
     { id: 19, name: 'Magma', country: 'South Africa' },
     { id: 20, name: 'Tornado', country: 'Sri Lanka' },
+    { id: 21, name: 'PeeXD', country: 'Yort' },
+    { id: 21, name: 'MooXD', country: 'Ple' },
   ];
 
   onKeyUp(search) {
     console.log(search);
-    this.filteredData = this.data.filter((product) => {
-      return product.name.includes(search);
+    this.filteredData = this.data.filter((res) => {
+      return res.name.toLowerCase().includes(search.toLowerCase());
     });
   }
-  constructor() { }
+  constructor() {}
 
   ngOnInit() {
-    this.filteredData  = this.data
+    this.filteredData = this.data;
   }
-
 }

@@ -1,0 +1,7 @@
+<input #search (keyup)="onKeyUp(search.value)" />
+
+<div *ngFor="let data of filteredData">
+  {{ data.name }}
+</div>
+
+<!-- text variable is displayed -->
